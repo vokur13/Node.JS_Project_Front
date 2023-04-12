@@ -1,13 +1,11 @@
 import AddRecipe from 'pages/AddRecipe/AddRecipe';
 import Main from 'pages/Main/Main';
-import Register from 'pages/Register/Register'; 
-import Signin from 'pages/Signin/Signin'; 
+import Register from 'pages/Register/Register';
+import Signin from 'pages/Signin/Signin';
 import SharedLayout from './SharedLayout/SharedLayout';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute, PublicRoute } from 'service/routes';
-import {
-  getAccessToken,
-} from '../redux/auth/authSelectors';
+import { getAccessToken } from '../redux/auth/authSelectors';
 import { useSelector, useDispatch } from 'react-redux';
 import Error from 'pages/Error/Error';
 import { lazy, useEffect } from 'react';
@@ -47,7 +45,7 @@ export const App = () => {
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <Routes>
-        <>
+        {/* <>
           <Route
             path="/"
             element={
@@ -80,13 +78,13 @@ export const App = () => {
               </PublicRoute>
             }
           />
-        </>
+        </> */}
         <Route
           path="/"
           element={
-            <PrivateRoute>
-              <SharedLayout />
-            </PrivateRoute>
+            // <PrivateRoute>
+            <SharedLayout />
+            // </PrivateRoute>
           }
         >
           <Route path="/main" element={<MainPage />} />
